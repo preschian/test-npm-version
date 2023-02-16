@@ -1,3 +1,3 @@
 # test-npm-version
 
-change it on union branch
+bump version with https://github.com/marketplace/actions/automated-version-bump
