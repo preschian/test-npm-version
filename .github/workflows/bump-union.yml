@@ -28,8 +28,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
-          default: prerelease
-          preid: 'rc'
+          default: 'prerelease'
+          rc-wording: null
 
       - name: 'cat package.json'
         run: cat ./package.json
