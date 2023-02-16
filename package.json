@@ -1,0 +1,20 @@
+{
+  "name": "test-npm-version",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/preschian/test-npm-version.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/preschian/test-npm-version/issues"
+  },
+  "homepage": "https://github.com/preschian/test-npm-version#readme"
+}
