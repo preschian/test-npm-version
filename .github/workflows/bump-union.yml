@@ -19,9 +19,6 @@ jobs:
       - name: 'cat package.json'
         run: cat ./package.json
 
-      - name: 'get branch name'
-        run: echo ${{ github.head_ref || github.ref_name }}
-
       - name: Automated Version Bump
         uses: phips28/gh-action-bump-version@v9.1.0
         id: version-bump
