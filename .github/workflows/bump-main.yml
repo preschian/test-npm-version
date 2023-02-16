@@ -1,9 +1,12 @@
 name: 'Bump Version'
 
 on:
-  push:
-    branches:
-      - 'main'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Choose a version: <major|minor|patch>'
+        required: true
+        default: 'minor'
 
 jobs:
   bump-version:
@@ -24,6 +27,8 @@ jobs:
         id: version-bump
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        with:
+          version-type: ${{ github.event.inputs.environment }}
 
       - name: 'cat package.json'
         run: cat ./package.json
