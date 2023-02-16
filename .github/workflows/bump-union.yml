@@ -1,0 +1,42 @@
+name: 'Bump Version'
+
+on:
+  push:
+    branches:
+      - 'union/**'
+
+jobs:
+  bump-version:
+    name: 'Bump Version on union branch'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: 'Checkout source code'
+        uses: 'actions/checkout@v3'
+
+      - name: 'cat package.json'
+        run: cat ./package.json
+
+      - name: 'get branch name'
+        run: echo ${{ github.head_ref || github.ref_name }}
+
+      # - name: Automated Version Bump
+      #   uses: phips28/gh-action-bump-version@v9.1.0
+      #   id: version-bump
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.TOKEN }}
+      #   with:
+      #     default: prerelease
+      #     preid: 'rc'
+      #     version-type: 'patch'
+      #     tag-suffix:  '-beta'
+
+      # - name: 'cat package.json'
+      #   run: cat ./package.json
+
+      # - name: 'Output Step'
+      #   env:
+      #     NEW_TAG: ${{ steps.version-bump.outputs.newTag }}
+      #   run: echo "new tag $NEW_TAG"
